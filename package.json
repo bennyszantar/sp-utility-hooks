@@ -1,0 +1,23 @@
+{
+  "name": "sphooks",
+  "version": "1.0.0",
+  "description": "Hooks collection for Sharepoint REST API with SPScript-B wrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fanatyko47/sphooks.git"
+  },
+  "keywords": [
+    "sharepoint",
+    "rest",
+    "hooks",
+    "spscript-b",
+    "wrapper",
+    "fetch"
+  ],
+  "author": "Beniamin Szantar",
+  "license": "MIT"
+}
