@@ -1,6 +1,6 @@
 {
   "name": "sp-utility-hooks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hooks collection for Sharepoint REST API with SPScript-B wrapper",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/fanatyko47/sphooks.git"
+  },
+  "dependencies":{
+    "spscript-b": "4.2.7"
   },
   "keywords": [
     "sharepoint",
