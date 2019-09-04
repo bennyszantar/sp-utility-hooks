@@ -1,5 +1,5 @@
 {
-  "name": "sphooks",
+  "name": "sp-utility-hooks",
   "version": "1.0.0",
   "description": "Hooks collection for Sharepoint REST API with SPScript-B wrapper",
   "main": "index.js",
