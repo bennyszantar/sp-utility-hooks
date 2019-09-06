@@ -1,8 +1,8 @@
 {
   "name": "sp-utility-hooks",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "Hooks collection for Sharepoint REST API with SPScript-B wrapper",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "prepublishOnly": "babel ./lib --out-dir ./dist -s inline"
   },
