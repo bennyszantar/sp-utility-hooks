@@ -4,7 +4,7 @@
 
 Feel free to open issues and give feedback :)
 
-## Requirments
+## Requirements
 - React ^16.8
 
 ## Installation
