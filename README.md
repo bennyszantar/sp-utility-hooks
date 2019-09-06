@@ -41,16 +41,16 @@ search data in sharepoint list
  expandFields: 'File/Name' // you can expand fields
  top: 500 // amount of records 
  order: 'asc' // you can use SP orders
- odata: '&$filter=Name -eq 'Monika' //you can inject additional odata
- initSearch: true //set true if you want to pre-search data on component mount
- initSearchQuery: 'Super Element' //query for initial search, only used if initSearch is true
+ odata: '&$filter=Name -eq 'Monika' // you can inject additional odata
+ initSearch: true // set true if you want to pre-search data on component mount
+ initSearchQuery: 'Super Element' // query for initial search, only used if initSearch is true
 })
 
-//if initialSarch is set to true
-//all your records are here after loading is finished
+// if initialSarch is set to true
+// all your records are here after loading is finished
 !data.isLoading && console.log(data.data) 
 
-//if you want search manualy, on input etc.
+// if you want search manualy, on input etc.
 search('yourInputValue','SomeFieldNotInConfig')
 .then(response => console.log(response)
 
