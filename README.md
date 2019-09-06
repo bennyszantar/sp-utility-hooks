@@ -5,14 +5,24 @@ Hello !
 
 Feel free to open issues and give feedback :)
 
-## ! Documentation is WIP !
+## About React and Sharepoint
+
+### Proxy your development
+For your sanity please use *sp-rest-proxy* package when developing solutions in Sharepoint, it allows you to proxy all
+your request and authenticate you with your Sharepoint site, this way you can work and test on real environment, which speeds up development dramatically when using React and NodeJS server. 
+
+### How i use React components
+All my solutions are injected using ContentEditor Webpart with path pointed to bundled index.html in SiteAssets folder.
+It works pretty good, sometimes it messes with css there and there, but what can we do :)
+
+I would love to develop my app using Sharepoint Framework, but on On-Premise versions of Sharepoint, SPFX doesn't support newest React versions which makes it useless for me (no hooks support)
 
 ---
 
 ## Data/Fetch Hooks:
 
 In most hooks you need  to provide ctx property in config object.
--  `ctx` sharepoint context (if your page is on *http://my-spsite/site/supersite1/page1.aspx* you need to provide **'http://my-spsite/site/supersite1/'** as your ctx url. If you're using **sp-rest-proxy** provide **" "** )
+`ctx` sharepoint context (if your page is on *http://my-spsite/site/supersite1/page1.aspx* you need to provide **'http://my-spsite/site/supersite1/'** as your ctx url. If you're using **sp-rest-proxy** provide **" "** )
 
 ### **`useSPPeopleFetch()`** 
 search people in SP Site with query passed in search function
