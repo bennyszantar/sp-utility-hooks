@@ -21,8 +21,10 @@ I would love to develop my app using Sharepoint Framework, but on On-Premise ver
 
 ## Data/Fetch Hooks:
 
-In most hooks you need  to provide ctx property in config object.
+In most hooks you need  to provide `ctx` property in config object.
+
 `ctx` sharepoint context (if your page is on *http://my-spsite/site/supersite1/page1.aspx* you need to provide **'http://my-spsite/site/supersite1/'** as your ctx url. 
+
 If you're using **sp-rest-proxy** and in development mode provide **" "** )
 
 ### **`useSPPeopleFetch()`** 
