@@ -1,4 +1,4 @@
-# sp-utility-hooks
+### sp-utility-hooks
 
 Hello ! sp-utility-hooks is hooks and helpers collection wrapping around spscript-b library that allows for easier work with Sharepoint REST API and managing data from lists and libriaries.
 
@@ -6,12 +6,12 @@ Hello ! sp-utility-hooks is hooks and helpers collection wrapping around spscrip
 
 ---
 
-## Data/Fetch Hooks:
+### Data/Fetch Hooks:
 
 In most hooks you need  to provide ctx property in config object.
 -  `ctx` sharepoint context (if your page is on *http://my-spsite/site/supersite1/page1.aspx* you need to provide **'http://my-spsite/site/supersite1/'** as your ctx url. If you're using **sp-rest-proxy** provide **" "** )
 
-### **`useSPPeopleFetch()`** 
+## **`useSPPeopleFetch()`** 
 search people in SP Site with query passed in search function
 
 ```js
@@ -134,7 +134,7 @@ const aclModel = [
   ];
 
 ```
-### **`usePermissionCheck()`**
+## **`usePermissionCheck()`**
 
 ```js
 const {can} = usePermissionCheck(); // get user object and aclModel from SecurityContext
