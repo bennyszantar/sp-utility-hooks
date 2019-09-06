@@ -6,7 +6,7 @@ Hello ! sp-utility-hooks is hooks and helpers collection wrapping around spscrip
 
 ---
 
-## Hooks:
+## Data/Fetch Hooks:
 
 In most hooks you need  to provide ctx property in config object.
 -  `ctx` sharepoint context (if your page is on *http://my-spsite/site/supersite1/page1.aspx* you need to provide **'http://my-spsite/site/supersite1/'** as your ctx url. If you're using **sp-rest-proxy** provide **" "** )
@@ -27,7 +27,7 @@ people.data.map(person => console.log(person))
 
 ```
 
-### **`useSPListSearch`**
+## **`useSPListSearch`**
 search data in sharepoint list
 
 ```js
@@ -56,7 +56,7 @@ search('yourInputValue','SomeFieldNotInConfig')
 
 ```
 
-### **`useSPDictionaryFetch()`** 
+## **`useSPDictionaryFetch()`** 
 fetches SP Choice field options 
 
 ```js
@@ -75,7 +75,7 @@ fetchDictionary()
 
 ```
 
-### **`useExcelExport()`** 
+## **`useExcelExport()`** 
 exporting array of objects to excel with remaping names of properties (for column names)
 
 ```js
@@ -99,7 +99,53 @@ example model used for export, properites not in model are not exported !
 ];
 ```
 
+### User/Security 
 
+## **`SecurityProvider`**
+provides current user object and permission model
+
+```js
+//app.js
+
+<SecurityProvider aclModel={exampleAclModel}>
+ //components you want to secure 
+ //you can put router here and use can() function to check if user should get access to some pages etc...
+</SecurityProvider>
+
+```
+
+example aclModel
+```js
+const aclModel = [
+    {
+      action: "post",
+      permissions: [
+        {
+          can: "write", //you can name your ability as you wish
+          who: "[Bloggers, Administrators"] //Sharepoint group that youre checking against, if user is in one of those, he will
+                                            //be able to use "write" ability
+        },
+        {
+          can: "read",
+          who: ["Everyone"]
+        }
+      ]
+    }
+  ];
+
+```
+### **`usePermissionCheck()`**
+
+```js
+const {can} = usePermissionCheck(); // get user object and aclModel from SecurityContext
+
+if(can('post','write)){
+ showAddPostModal()
+}else{
+ alert('Ha! You can't !')
+}
+
+```
 
 
  
