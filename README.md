@@ -1,6 +1,5 @@
 # sp-utility-hooks
-
-Hello ! 
+ 
 *sp-utility-hooks* is hooks and helpers collection wrapping around spscript-b library that allows for easier work with Sharepoint REST API and managing data from lists and libriaries.
 
 Feel free to open issues and give feedback :)
