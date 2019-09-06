@@ -41,7 +41,7 @@ search data in sharepoint list
  expandFields: 'File/Name' // you can expand fields
  top: 500 // amount of records 
  order: 'asc' // you can use SP orders
- odata: '&$filter=Name -eq 'Monika' // you can inject additional odata
+ odata: '&$filter=Name -eq 'Monika'' // you can inject additional odata
  initSearch: true // set true if you want to pre-search data on component mount
  initSearchQuery: 'Super Element' // query for initial search, only used if initSearch is true
 })
