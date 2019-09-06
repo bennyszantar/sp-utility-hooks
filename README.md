@@ -4,6 +4,9 @@
 
 Feel free to open issues and give feedback :)
 
+## Requirments
+- React ^16.8
+
 ## Installation
 
 ```sh
