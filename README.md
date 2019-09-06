@@ -10,6 +10,16 @@ Feel free to open issues and give feedback :)
 $ npm install sp-utility-hooks
 ```
 
+## Functionalities
+
+- fetching data from lists (with filters, orders, expanding and selecting)
+- fetching people from your site with query
+- exporting data to excel (with xlsx library)
+- client permission managing
+- fetching dictionaries from Choice fields
+
+All that in simple and clean way with Hooks !
+
 ## About React and Sharepoint
 
 ### Proxy your development
