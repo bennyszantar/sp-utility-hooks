@@ -4,6 +4,12 @@
 
 Feel free to open issues and give feedback :)
 
+## Installation
+
+```sh
+$ npm install sp-utility-hooks
+```
+
 ## About React and Sharepoint
 
 ### Proxy your development
