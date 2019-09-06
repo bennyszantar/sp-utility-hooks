@@ -6,32 +6,56 @@ Hello ! sp-utility-hooks is hooks and helpers collection wrapping around spscrip
 
 ---
 
-### Hooks:
+## Hooks:
 
 In most hooks you need  to provide ctx property in config object.
 -  `ctx` sharepoint context (if your page is on *http://my-spsite/site/supersite1/page1.aspx* you need to provide **'http://my-spsite/site/supersite1/'** as your ctx url. If you're using **sp-rest-proxy** provide **" "** )
 
-### **`[people, search] = useSPPeopleFetch(config)`** - search people in SP Site with query passed in search function
-**returns** 
--  `people` object with data and fetch status `people.data` `people.isLoading` `people.isError` 
--  `search(query)` fetching people by name with provided `query`
+### **`useSPPeopleFetch()`** 
+search people in SP Site with query passed in search function
 
-### **`[people, search] = useSPListSearch(config)`** - search for data in lists with query passed in search function.
-**returns** 
--  `data` object with data and fetch status `data.data` `data.isLoading` `data.isError` 
--  `search(query, overrideField)` fetching people by name with  `query` and if provided `overrideField` changes `searchField` from config.
+```js
+[people, search] = usePeopleFetch({
+ ctx: 'http://mycoolspsite/mysite/'
+})
 
- **config**
--  `ctx` as always
--  `listName` title of list you want to search in
--  `fieldName` internal name of field that you want to search against
--  `searchType` how you want to search in field (number, exactString, substring, listAll)
--  `selectFields` what fields you want to select (default is always * + `selectFields` if provided)
--  `expandFields` what fields you want to expand
--  `top` number of items you want to return
--  `order` order type (asc | desc), defaults to asc
--  `odata` additional odata (filter)
--  `initSearch` set `true` if you want to fetch data on component mount with `initialSearchQuery` if provided
--  `initSearchQuery` provide query for initial search, if empty list all items on initial search
- 
+//use search function somewhere
+search('Beniamin')
+
+//do something with data
+people.data.map(person => console.log(person))
+
+```
+
+### **`useSPListSearch`**
+search data in sharepoint list
+
+```js
+[data, search] = useSPListSearch({
+ ctx: 'http://mycoolspsite/mysite/' // | required
+ listName: 'CoolList' // list name | required
+ fieldName: 'Title' // searched field (you can override it later) | required
+ searchType: 'substring' // you can choose between substring, exactString and number | required
+ searchCondition: '-eq' // you can provide all SP REST filters conditions, if empty defaults to -eq 
+ selectFields: 'SomeNotCommonField' // you can select additional fields that are not returned with * in filter (like File etc.)
+ expandFields: 'File/Name' // you can expand fields
+ top: 500 // amount of records 
+ order: 'asc' // you can use SP orders
+ odata: '&$filter=Name -eq 'Monika' //you can inject additional odata
+ initSearch: true //set true if you want to pre-search data on component mount
+ initSearchQuery: 'Super Element' //query for initial search, only used if initSearch is true
+})
+
+//if initialSarch is set to true
+//all your records are here after loading is finished
+!data.isLoading && console.log(data.data) 
+
+//if you want search manualy, on input etc.
+search('yourInputValue','SomeFieldNotInConfig')
+.then(response => console.log(response)
+
+
+```
+
+
  
