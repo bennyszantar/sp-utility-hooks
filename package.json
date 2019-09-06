@@ -1,6 +1,6 @@
 {
   "name": "sp-utility-hooks",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Hooks collection for Sharepoint REST API with SPScript-B wrapper",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fanatyko47/sphooks.git"
+    "url": "https://github.com/fanatyko47/sp-utility-hooks.git"
   },
   "dependencies":{
     "spscript-b": "4.2.7"
@@ -19,7 +19,9 @@
     "hooks",
     "spscript-b",
     "wrapper",
-    "fetch"
+    "fetch",
+    "security",
+    "acl"
   ],
   "author": "Beniamin Szantar",
   "license": "MIT"
