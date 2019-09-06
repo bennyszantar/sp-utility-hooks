@@ -121,9 +121,13 @@ example model used for export, properites not in model are not exported !
 provides current user object and permission model
 
 ```js
+import {aclModel,config} from './config';
 //app.js
 
-<SecurityProvider aclModel={exampleAclModel}>
+<SecurityProvider 
+ aclModel={aclModel}
+ ctx={config.contextUrl} // your SP site url
+>
  //components you want to secure 
  //you can put router here and use can() function to check if user should get access to some pages etc...
 </SecurityProvider>
