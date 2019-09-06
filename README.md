@@ -20,6 +20,7 @@ In most hooks you need  to provide ctx property in config object.
 **returns** 
 -  `data` object with data and fetch status `data.data` `data.isLoading` `data.isError` 
 -  `search(query, overrideField)` fetching people by name with  `query` and if provided `overrideField` changes `searchField` from config.
+
  **config**
 -  `ctx` as always
 -  `listName` title of list you want to search in
