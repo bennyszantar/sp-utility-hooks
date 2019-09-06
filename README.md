@@ -15,7 +15,7 @@ In most hooks you need  to provide ctx property in config object.
 search people in SP Site with query passed in search function
 
 ```js
-[people, search] = usePeopleFetch({
+const [people, search] = useSPPeopleFetch({
  ctx: 'http://mycoolspsite/mysite/'
 })
 
@@ -31,7 +31,7 @@ people.data.map(person => console.log(person))
 search data in sharepoint list
 
 ```js
-[data, search] = useSPListSearch({
+const [data, search] = useSPListSearch({
  ctx: 'http://mycoolspsite/mysite/' // | required
  listName: 'CoolList' // list name | required
  fieldName: 'Title' // searched field (you can override it later) | required
@@ -54,8 +54,52 @@ search data in sharepoint list
 search('yourInputValue','SomeFieldNotInConfig')
 .then(response => console.log(response)
 
+```
+
+### **`useSPDictionaryFetch()`** 
+fetches SP Choice field options 
+
+```js
+const [dictionary, fetchDictionary] = useSPDictionaryFetch({
+ ctx: 'http://mycoolspsite/mysite/' // as always | required
+ fields: ['Status','Type'] // fields of Choice type in SP you want to fetch options from
+ listName: 'SuperList' // SP List name
+})
+
+//you can access your dictionaries after fetch 
+//any fields provided in fields propery are mapped to dictionary object with all choices that are in field
+console.log(dictionary['Status'])
+
+//you can refetch dictionaries, its pretty useless right now because you cannot override anything
+fetchDictionary()
 
 ```
+
+### **`useExcelExport()`** 
+exporting array of objects to excel with remaping names of properties (for column names)
+
+```js
+const [save, data] = useExcelExport({
+ data: myArray // array of objects you want to export
+ model: myModel // model used for remaping and changing properties on fly
+ onBeforeExport: doSomethingWithData(data => return data.map(val => val.count+1)) // do something with data before export
+ onBeforeParse: doSomethingWithData(data) // do something with data before parsing with model
+})
+
+//export on click
+<Button onClick={() => save('filename')}>
+
+```
+
+example model used for export, properites not in model are not exported !
+```js
+ export const exampleModel = [
+  {old: "property1", new:"Super property 1", render: (value) => value ? 'SUPER YES' : 'SUPER NO'}, //remaps old name to new name and change field value conditionaly with render callback
+  {old: "property2", new:"Super property 2"},
+];
+```
+
+
 
 
  
