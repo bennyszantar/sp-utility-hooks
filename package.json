@@ -1,6 +1,6 @@
 {
   "name": "sp-utility-hooks",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Hooks collection for Sharepoint REST API with SPScript-B wrapper",
   "main": "dist/index.js",
   "scripts": {
