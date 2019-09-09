@@ -113,15 +113,14 @@ fetchDictionary()
 exporting array of objects to excel with remaping names of properties (for column names)
 
 ```js
-const [save, data] = useExcelExport({
- data: myArray // array of objects you want to export
+const [save] = useExcelExport({
  model: myModel // model used for remaping and changing properties on fly
  onBeforeExport: doSomethingWithData(data => return data.map(val => val.count+1)) // do something with data before export
  onBeforeParse: doSomethingWithData(data) // do something with data before parsing with model
 })
 
 //export on click
-<Button onClick={() => save('filename')}>
+<Button onClick={() => save('filename', dataSource)}>
 
 ```
 
