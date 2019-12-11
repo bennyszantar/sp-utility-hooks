@@ -1,24 +1,23 @@
 {
   "name": "sp-utility-hooks",
-  "version": "1.3.0",
+  "version": "1.3.2",
   "description": "Hooks collection for Sharepoint REST API with SPScript-B wrapper",
   "main": "dist/index.js",
   "scripts": {
-    "prepublishOnly": "babel ./lib --out-dir ./dist -s inline"
+    "prepublishOnly": "babel ./lib --out-dir ./dist -s inline",
+    "build": "babel ./lib --out-dir ./dist -s inline"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/fanatyko47/sp-utility-hooks.git"
   },
-  "dependencies": {  
-  },
+  "dependencies": {},
   "peerDependencies": {
-    "react": "^16.8.0"
+    "react": "^16.9.0"
   },
   "files": [
     "lib/*",
     "dist/*"
-
   ],
   "keywords": [
     "sharepoint",
@@ -37,7 +36,6 @@
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
-    "react": "^16.9.0",
     "spscript-b": "4.2.7"
   }
 }
